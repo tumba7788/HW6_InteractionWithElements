@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group = 'Danilova'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.29.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0' // Для JUnit 5
+
+}
+
+test {
+    useJUnitPlatform()
+    maxParallelForks = 4 // Количество потоков для параллельного запуска тестов
+}
